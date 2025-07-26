@@ -112,25 +112,27 @@ Copy `/packages/funding-sdk` into your project or install dependencies:
 > pnpm add @near-wallet-selector/core @near-wallet-selector/modal-ui @near-wallet-selector/near-wallet @near-wallet-selector/here-wallet near-api-js
 
 ### Example Usage
--
+
+```
 import { FundingSDK } from './packages/funding-sdk'; // Adjust path
 
 async function main() {
-const sdk = new FundingSDK({ network: 'testnet', daoContractId: 'your-dao.testnet' });
-await sdk.init();
+  const sdk = new FundingSDK({ network: 'testnet', daoContractId: 'your-dao.testnet' });
+  await sdk.init();
 
-const proposal = {
-description: 'Funding for hub event',
-amount: 1000000000000000000000000, // 1 NEAR
-recipient: 'recipient.testnet'
-};
+  const proposal = {
+    description: 'Funding for hub event',
+    amount: 1000000000000000000000000, // 1 NEAR
+    recipient: 'recipient.testnet'
+  };
 
-const txHash = await sdk.submitProposal(proposal);
-console.log(Proposal submitted! Tx: ${txHash});
+  const txHash = await sdk.submitProposal(proposal);
+  console.log(`Proposal submitted! Tx: ${txHash}`);
 }
 
 main();
--
+```
+
 
 Run with `ts-node your-script.ts`. It prompts wallet signing and submits to the DAO.
 
