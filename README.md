@@ -14,10 +14,11 @@
 ## 🚀 Quick Start
 
 - **Clone repo**: `git clone https://github.com/iJ03l/NearZen.git`
-- **Install dependencies**: `npm install`
+- **Install dependencies**: `pnpm install`
 - **Run setup script**: `npm run setup`
 - **Start building**: Check out `/templates` for hub starter kits
-- **Get funding**: Use `/packages/funding-sdk` for ecosystem grants
+- **Run tests**: `pnpm test`
+- **Use the Funding SDK**: See usage below for submitting DAO proposals
 
 ## ✨ Features
 
@@ -27,6 +28,13 @@
 - 🤝 **Open Contributions**: Anyone can contribute improvements, translations, and regional adaptations
 - 📊 **Metrics & Analytics**: Track your hub's performance and impact transparently
 - 🔗 **NEAR Integration**: Seamless compatibility with NEAR wallets, DAOs, and protocols
+
+### ✨ Implemented Features
+
+- **Funding Module SDK**: A TypeScript library for submitting funding proposals to NEAR DAOs with wallet integration.
+- **Basic Repo Structure**: Folders for packages, templates, examples, scripts, tests, and CI workflows.
+- **CI/CD with GitHub Actions**: Automated linting and testing on pushes/PRs.
+- **Testing with Jest**: Unit tests for the SDK, including mocks for wallet and network calls.
 
 ## 📁 Repository Structure
 
@@ -83,20 +91,48 @@ cd NearZen
 
 Install dependencies
 
-npm install
+pnpm install
+Run linting
+
+pnpm run lint
 Run tests
 
-npm test
-Lint code
+pnpm test
+Build (if needed)
 
-npm run lint
-Build funding SDK
+tsc # Compiles TS to JS in /dist
 
-npm run build:sdk
-Deploy contracts (testnet)
 
-npm run deploy:testnet
+## 💰 Using the Funding SDK
 
+The SDK allows established NearZen hubs to submit funding proposals to a NEAR DAO.
+
+### Installation
+Copy `/packages/funding-sdk` into your project or install dependencies:
+
+> pnpm add @near-wallet-selector/core @near-wallet-selector/modal-ui @near-wallet-selector/near-wallet @near-wallet-selector/here-wallet near-api-js
+
+### Example Usage
+`
+import { FundingSDK } from './packages/funding-sdk'; // Adjust path
+
+async function main() {
+const sdk = new FundingSDK({ network: 'testnet', daoContractId: 'your-dao.testnet' });
+await sdk.init();
+
+const proposal = {
+description: 'Funding for hub event',
+amount: 1000000000000000000000000, // 1 NEAR
+recipient: 'recipient.testnet'
+};
+
+const txHash = await sdk.submitProposal(proposal);
+console.log(Proposal submitted! Tx: ${txHash});
+}
+
+main();
+`
+Run with `ts-node your-script.ts`. It prompts wallet signing and submits to the DAO.
 
 ## 🌐 Ecosystem Integration
 
