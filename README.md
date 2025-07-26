@@ -29,15 +29,25 @@
 ## 📁 Repository Structure
 
 ├── docs/ # Documentation and guides (published to website)
+│
 ├── packages/ # Reusable libraries and SDKs
+│
 │ ├── funding-sdk/ # Ecosystem funding request tools
+│ │
 │ └── wallet-utils/ # NEAR wallet integration helpers
+│
 ├── templates/ # Copy-paste hub playbooks
+│
 │ ├── dao-setup/ # DAO governance templates
+│ │
 │ ├── events/ # Hackathon and workshop kits
+│ │
 │ └── community/ # Community building resources
+│
 ├── examples/ # Reference implementations
+│
 ├── scripts/ # Development and deployment tools
+│
 └── .github/ # Community guidelines and CI/CD
 
 
@@ -66,7 +76,9 @@
 Clone the repository
 
 git clone https://github.com/iJ03l/NearZen.git
+
 cd NearZen
+
 Install dependencies
 
 npm install
