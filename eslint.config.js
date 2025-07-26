@@ -5,7 +5,7 @@ import jest from 'eslint-plugin-jest';
 export default [
   js.configs.recommended,
   {
-    files: ['**/*.js', '**/*.jsx'],  // Apply to all JS files
+    files: ['**/*.js', '**/*.jsx'],  
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -22,11 +22,11 @@ export default [
   },
   {
     // Override for test files
-    files: ['tests/**/*.js', '**/*.test.js'],  // Target your test folder/files
-    ...jest.configs['flat/recommended'],  // Extend Jest's recommended config
+    files: ['tests/**/*.js', '**/*.test.js'],  
+    ...jest.configs['flat/recommended'], 
     languageOptions: {
       globals: {
-        ...globals.jest  // Add Jest globals like test, expect, describe
+        ...globals.jest  
       }
     }
   }
