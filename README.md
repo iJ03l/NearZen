@@ -15,7 +15,6 @@
 
 - **Clone repo**: `git clone https://github.com/iJ03l/NearZen.git`
 - **Install dependencies**: `pnpm install`
-- **Run setup script**: `npm run setup`
 - **Start building**: Check out `/templates` for hub starter kits
 - **Run tests**: `pnpm test`
 - **Use the Funding SDK**: See usage below for submitting DAO proposals
@@ -113,7 +112,7 @@ Copy `/packages/funding-sdk` into your project or install dependencies:
 > pnpm add @near-wallet-selector/core @near-wallet-selector/modal-ui @near-wallet-selector/near-wallet @near-wallet-selector/here-wallet near-api-js
 
 ### Example Usage
-`
+-
 import { FundingSDK } from './packages/funding-sdk'; // Adjust path
 
 async function main() {
@@ -131,7 +130,8 @@ console.log(Proposal submitted! Tx: ${txHash});
 }
 
 main();
-`
+-
+
 Run with `ts-node your-script.ts`. It prompts wallet signing and submits to the DAO.
 
 ## 🌐 Ecosystem Integration
