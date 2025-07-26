@@ -11,6 +11,9 @@
 
 **Open-source framework for establishing and scaling regional NEAR hubs globally, with transparent tools, open contributions, and ecosystem funding pathways.**
 
+## Brand Strategy
+[Full details in BRAND-STRATEGY.md](BRAND-STRATEGY.md)
+
 ## 🚀 Quick Start
 
 - **Clone repo**: `git clone https://github.com/iJ03l/NearZen.git`
