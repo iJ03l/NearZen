@@ -1,3 +1,5 @@
+![Nearzen Banner](./nearzen-light.svg#gh-light-mode-only)
+![Nearzen Banner](./nearzen-dark.svg#gh-dark-mode-only)
 # NearZen Framework
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
