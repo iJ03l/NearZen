@@ -16,9 +16,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run test
+      - run: pnpm ci
+      - run: pnpm run lint
+      - run: pnpm run test
 
   contract-tests:
     runs-on: ubuntu-latest
