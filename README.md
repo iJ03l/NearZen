@@ -29,7 +29,6 @@
 ## 📁 Repository Structure
 
 ├── docs/ # Documentation and guides (published to website)
-
 ├── packages/ # Reusable libraries and SDKs
 │ ├── funding-sdk/ # Ecosystem funding request tools
 │ └── wallet-utils/ # NEAR wallet integration helpers
