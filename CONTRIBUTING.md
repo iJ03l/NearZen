@@ -28,7 +28,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the [NearZen Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [maintainers@nearzen.org].
+This project and everyone participating in it is governed by the [NearZen Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [...].
 
 ## I Have a Question
 
@@ -68,7 +68,7 @@ A good bug report shouldn't leave others needing to chase you up for more inform
 
 #### How Do I Submit a Good Bug Report?
 
-> You must never report security related issues, vulnerabilities or bugs including sensitive information to the issue tracker, or elsewhere in public. Instead sensitive bugs must be sent by email to [security@nearzen.org].
+> You must never report security related issues, vulnerabilities or bugs including sensitive information to the issue tracker, or elsewhere in public. Instead sensitive bugs must be sent by email to [...].
 
 We use GitHub issues to track bugs and errors. If you run into an issue with the project:
 
@@ -199,7 +199,7 @@ Interested in becoming a core maintainer? We're always looking for dedicated con
 - Demonstrate excellent communication skills
 - Are committed to the project's mission and values
 
-Reach out to the current maintainers through [GitHub Discussions](../../discussions) or email [maintainers@nearzen.org] to express your interest.
+Reach out to the current maintainers through [GitHub Discussions](../../discussions) or email ... to express your interest.
 
 ---
 

@@ -116,8 +116,8 @@ Track global NearZen adoption:
 
 ## 🤝 Community
 
-- **Website**: [nearzen.org](https://nearzen.org) (coming soon)
-- **Discord**: Join our community discussions
+- **Website**: (coming soon)
+- **Telegram**: Join the [NEAR DevHub](https://t.me/NearDevHub) community
 - **Twitter**: Follow [@NearZenHub](https://twitter.com/NearZenHub) for updates
 - **NEAR DevHub**: Participate in ecosystem discussions
 
