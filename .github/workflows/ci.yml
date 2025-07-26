@@ -1,0 +1,53 @@
+# .github/workflows/ci.yml
+
+name: NearZen CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test
+
+  contract-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      # Uncomment below if you use Rust smart contracts
+      #- uses: actions-rs/toolchain@v1
+      #  with:
+      #    toolchain: stable
+      #    profile: minimal
+      #    override: true
+      #    components: rustfmt, clippy
+      - name: Build WASM contracts (placeholder)
+        run: |
+          echo "Building WASM contracts (add actual build command here)"
+          # Example: cargo build --target wasm32-unknown-unknown --release
+      - name: Run contract unit tests (placeholder)
+        run: |
+          echo "Running contract unit tests (add actual test command here)"
+          # Example: cargo test
+
+  # Optionally, add a deploy job that runs on pushes to main
+  #deploy:
+  #  needs: [lint-test, contract-tests]
+  #  runs-on: ubuntu-latest
+  #  if: github.ref == 'refs/heads/main'
+  #  steps:
+  #    - uses: actions/checkout@v4
+  #    - run: npm run deploy
