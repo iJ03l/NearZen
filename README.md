@@ -107,42 +107,136 @@ Run tests
 pnpm test
 Build (if needed)
 
-tsc # Compiles TS to JS in /dist
 
 
-## 💰 Using the Funding SDK
+## 💰 Using the Funding SDK with Treasury Management
 
-The SDK allows established NearZen hubs to submit funding proposals to a NEAR DAO.
+The SDK provides comprehensive capabilities for both requesting ecosystem funding and managing hub treasuries. The SDK maintains full backward compatibility while adding powerful treasury operations including DAO creation, staking delegation, and financial reporting.
 
 ### Installation
 Copy `/packages/funding-sdk` into your project or install dependencies:
 
 > pnpm add @near-wallet-selector/core @near-wallet-selector/modal-ui @near-wallet-selector/near-wallet @near-wallet-selector/here-wallet near-api-js
 
-### Example Usage
+### Basic Funding Request Example
 
 ```
 import { FundingSDK } from './packages/funding-sdk'; // Adjust path
 
-async function main() {
+async function submitFundingRequest() {
   const sdk = new FundingSDK({ network: 'testnet', daoContractId: 'your-dao.testnet' });
   await sdk.init();
 
   const proposal = {
-    description: 'Funding for hub event',
-    amount: 1000000000000000000000000, // 1 NEAR
+    description: 'Funding for hub hackathon event',
+    amount: 1000000000000000000000000, // 1 NEAR in yoctoNEAR
     recipient: 'recipient.testnet'
   };
 
   const txHash = await sdk.submitProposal(proposal);
-  console.log(`Proposal submitted! Tx: ${txHash}`);
+  console.log(`Proposal submitted! Tx:
+
+```
+### Treasury Management Example
+```
+import { FundingSDK } from './packages/funding-sdk';
+
+async function manageTreasury() {
+  const sdk = new FundingSDK({ network: 'testnet', daoContractId: 'your-dao.testnet' });
+  await sdk.init();
+
+  // Create a treasury DAO for community governance
+  const treasuryTxHash = await sdk.createTreasuryDAO(
+  'NearZen Nigeria Treasury',
+  ['leader.testnet', 'member1.testnet', 'member2.testnet'],
+  'Managing funds for our regional NEAR hub activities'
+  );
+  console.log(Treasury DAO created! Tx: ${treasuryTxHash});
+
+  // Delegate tokens to validators for yield generation (~4.5% APY)
+  const stakeTxHash = await sdk.delegateStake('validator.testnet', 5000000000000000000000000); // 5 NEAR
+  console.log(Tokens delegated for staking! Tx: ${stakeTxHash});
+
+  // Fund the treasury from hub activities
+  const fundTxHash = await sdk.fundTreasury('treasury-dao.testnet', 10000000000000000000000000); // 10 NEAR
+  console.log(Treasury funded! Tx: ${fundTxHash});
+
+  // Generate comprehensive treasury report
+  const report = await sdk.generateTreasuryReport(['validator.testnet', 'validator2.testnet']);
+  console.log('Treasury Report:', {
+  availableBalance: report.balance,
+  stakedAmount: report.stakedBalance,
+  estimatedRewards: report.rewards,
+  validators: report.delegatedValidators
+  });
 }
 
-main();
+manageTreasury();
 ```
 
+### Advanced Staking Operations
+```
+async function manageStaking() {
+  const sdk = new FundingSDK({ network: 'testnet', daoContractId: 'your-dao.testnet' });
+  await sdk.init();
 
-Run with `ts-node your-script.ts`. It prompts wallet signing and submits to the DAO.
+  // Get list of available validators
+  const validators = await sdk.getValidators();
+  console.log('Available validators:', validators.slice(0, 5)); // Show first 5
+
+  // Check specific validator's staking pool information
+  const poolInfo = await sdk.getStakingPoolInfo('validator.testnet');
+  console.log('Pool info:', {
+  stakedBalance: poolInfo.stakedBalance,
+  unstakedBalance: poolInfo.unstakedBalance,
+  canWithdraw: poolInfo.canWithdraw
+  });
+
+  // Unstake tokens (begins 2-4 epoch waiting period)
+  const unstakeTxHash = await sdk.unstakeTokens('validator.testnet', 1000000000000000000000000); // 1 NEAR
+  console.log(Unstaking initiated! Tx: ${unstakeTxHash});
+
+  // Withdraw unstaked tokens after waiting period
+  const withdrawTxHash = await sdk.withdrawUnstaked('validator.testnet');
+  console.log(Tokens withdrawn! Tx: ${withdrawTxHash});
+  }
+
+manageStaking();
+```
+
+### Combined Funding and Treasury Workflow
+```
+async function hubLifecycle() {
+  const sdk = new FundingSDK({ network: 'testnet', daoContractId: 'ecosystem-dao.testnet' });
+  await sdk.init();
+
+  // 1. Request initial funding from ecosystem DAO
+  const fundingProposal = {
+  description: 'Initial funding for NearZen Regional Hub in Nigeria',
+  amount: 50000000000000000000000000, // 50 NEAR
+  recipient: 'hub-leader.testnet'
+  };
+  const proposalTx = await sdk.submitProposal(fundingProposal);
+  console.log(Funding requested! Proposal Tx: ${proposalTx});
+
+  // 2. After funding approval, create treasury DAO
+  const treasuryTx = await sdk.createTreasuryDAO(
+  'NearZen Nigeria Hub Treasury',
+  ['hub-leader.testnet', 'community-member.testnet']
+  );
+
+  // 3. Fund treasury and stake for sustainability
+  await sdk.fundTreasury('nigeria-treasury.testnet', 30000000000000000000000000); // 30 NEAR
+  await sdk.delegateStake('validator.testnet', 20000000000000000000000000); // 20 NEAR for staking
+
+  // 4. Generate regular reports for transparency
+  const quarterlyReport = await sdk.generateTreasuryReport(['validator.testnet']);
+  console.log('Quarterly Treasury Report:', quarterlyReport);
+  }
+
+hubLifecycle();
+```
+
 
 ## 🌐 Ecosystem Integration
 
