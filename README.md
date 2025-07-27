@@ -34,9 +34,12 @@
 ### ✨ Implemented Features
 
 - **Funding Module SDK**: A TypeScript library for submitting funding proposals to NEAR DAOs with wallet integration.
+- **Treasury Management System**: Comprehensive treasury operations including DAO creation, staking delegation, fund management, and reporting for sustainable hub operations.
 - **Basic Repo Structure**: Folders for packages, templates, examples, scripts, tests, and CI workflows.
 - **CI/CD with GitHub Actions**: Automated linting and testing on pushes/PRs.
 - **Testing with Jest**: Unit tests for the SDK, including mocks for wallet and network calls.
+- **Templates and Guides**: Treasury setup guides, branding kits, event templates, and contribution frameworks.
+
 
 ## 📁 Repository Structure
 
