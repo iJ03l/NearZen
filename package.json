@@ -21,7 +21,8 @@
     "globals": "^16.3.0",
     "jest": "^30.0.5",
     "near-workspaces": "^5.0.0",
-    "ts-jest": "^29.4.0"
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "@near-wallet-selector/core": "^9.1.0",
