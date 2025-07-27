@@ -27,9 +27,11 @@
 - 🌍 **Global Accessibility**: Start a NEAR hub anywhere with our standing kit
 - 🔧 **Modular Tools**: Templates for DAOs, events, governance, and community building
 - 💰 **Funding Pathway**: Built-in mechanisms for established communities to request ecosystem funding
+- 🏦 **Treasury Management**: Create treasury DAOs, delegate stakes for yields, and manage hub funds sustainably
 - 🤝 **Open Contributions**: Anyone can contribute improvements, translations, and regional adaptations
-- 📊 **Metrics & Analytics**: Track your hub's performance and impact transparently
-- 🔗 **NEAR Integration**: Seamless compatibility with NEAR wallets, DAOs, and protocols
+- 📊 **Metrics & Analytics**: Track your hub's performance and impact transparently with treasury reporting
+- 🔗 **NEAR Integration**: Seamless compatibility with NEAR wallets, DAOs, protocols, and staking validators
+
 
 ### ✨ Implemented Features
 
